@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Analytics Tracker"
 include ':app'
+include ':analyticstracker'
