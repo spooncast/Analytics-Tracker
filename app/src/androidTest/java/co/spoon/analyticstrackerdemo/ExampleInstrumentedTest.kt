@@ -1,4 +1,4 @@
-package co.spoon.analyticstracker
+package co.spoon.analyticstrackerdemo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

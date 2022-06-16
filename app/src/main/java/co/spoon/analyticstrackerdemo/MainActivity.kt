@@ -1,4 +1,4 @@
-package co.spoon.analyticstracker
+package co.spoon.analyticstrackerdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
