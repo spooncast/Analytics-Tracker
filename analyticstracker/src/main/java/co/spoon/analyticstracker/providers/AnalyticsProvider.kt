@@ -17,4 +17,9 @@ enum class Tracker {
      * Appsflyer
      */
     AF,
+
+    /**
+     * Firebase Analytics
+     */
+    FA,
 }
