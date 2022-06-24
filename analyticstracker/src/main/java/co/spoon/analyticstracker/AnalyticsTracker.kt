@@ -4,15 +4,18 @@ import android.app.Application
 import co.spoon.analyticstracker.providers.AmplitudeConfig
 import co.spoon.analyticstracker.providers.AnalyticsProvider
 import co.spoon.analyticstracker.providers.AppsFlyerConfig
+import co.spoon.analyticstracker.providers.FirebaseAnalyticsConfig
 import co.spoon.analyticstracker.providers.Tracker
 import co.spoon.analyticstracker.providers.amplitude.AmplitudeProvider
 import co.spoon.analyticstracker.providers.appsflyer.AppsFlyerProvider
+import co.spoon.analyticstracker.providers.firebase.FirebaseAnalyticsProvider
 import com.amplitude.api.Amplitude
 import com.appsflyer.AppsFlyerLib
 
 class AnalyticsTracker(
     amplitudeConfig: AmplitudeConfig? = null,
-    appsFlyerConfig: AppsFlyerConfig? = null
+    appsFlyerConfig: AppsFlyerConfig? = null,
+    firebaseAnalyticsConfig: FirebaseAnalyticsConfig? = null
 ) {
 
     private val providerMap = mutableMapOf<Tracker, AnalyticsProvider>()
@@ -35,6 +38,10 @@ class AnalyticsTracker(
                 }
             }
             providerMap[appsFlyerConfig.tracker] = AppsFlyerProvider(appsFlyerConfig.appCtx, appsFlyer)
+        }
+
+        if(firebaseAnalyticsConfig != null) {
+            providerMap[firebaseAnalyticsConfig.tracker] = FirebaseAnalyticsProvider(firebaseAnalyticsConfig.firebaseAnalytics)
         }
     }
 
